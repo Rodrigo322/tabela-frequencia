@@ -6,6 +6,8 @@ function organizedNumbers() {
 
     var number = document.getElementById('number').value;
 
+    number.replace(',', '.');
+
     disorganizedNumbers = number.split(' ');
 
     organizedNumber = disorganizedNumbers.sort(function(a, b) {
@@ -16,8 +18,8 @@ function organizedNumbers() {
         result += " " + organizedNumber[index];
     }
 
-    fullRange = parseInt(organizedNumber[disorganizedNumbers.length - 1]) - parseInt(organizedNumber[0]);
-
+    fullRange = parseFloat(organizedNumber[disorganizedNumbers.length - 1]) - parseFloat(organizedNumber[0]);
+    console.log(organizedNumber[disorganizedNumbers.length - 1])
     if (isNaN(fullRange)) {
         fullRange = 0;
     }
@@ -25,9 +27,9 @@ function organizedNumbers() {
     const numberClass = numberClassSturges(disorganizedNumbers.length);
 
     document.getElementById('result').value = result;
-    document.getElementById('amplitudeTotal').value = "Amplitude Total: " + fullRange;
+    document.getElementById('amplitudeTotal').value = "Amplitude Total: " + parseFloat(fullRange);
     document.getElementById('numeroClasses').value = "Numero de classe: " + numberClass;
-    document.getElementById('intervaloClasse').value = "Intervalo de classes: " + parseInt(fullRange / numberClass);
+    document.getElementById('intervaloClasse').value = "Intervalo de classes: " + parseFloat(Math.ceil(fullRange / numberClass));
 
 }
 
