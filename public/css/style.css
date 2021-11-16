@@ -1,3 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 65%;
+}
+
+@media (min-width: 700px) {
+    :root {
+        font-size: 72.5%;
+    }
+}
+
+html, body {
+    height: 100vh;
+}
+
 body {
-    margin: 0px;
+    /* background: #F0F0F7; */
+    background-color: #41414D;
+}
+
+/*
+* Header da pagina
+*/
+
+.page-header {
+    display: flex;
+    /* background-color: #8257E5; */
+    background: #191622;
+}
+
+.page-header .header-content {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    margin: 3.2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.page-header .header-content strong {
+    font: 700 3.6rem Archivo;
+    line-height: 4.2rem;
+    color: #FFFFFF;
+}
+
+.page-header .header-content img {
+    width: 25%;
+}
+
+@media (min-width: 700px) {
+    .page-header {
+        height: 240px;
+    }
+    .page-header .header-content {
+        flex: 1;
+        max-width: 740px;
+        margin: 0 auto;
+        padding-bottom: 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .page-header .header-content strong {
+        max-width: 350px;
+    }
+}
+
+/*
+* Header da pagina
+*/
+
+/*
+* form da pagina
+*/
+
+.input-block {
+    position: relative;
+}
+
+.input-block+.input-block {
+    margin-top: 1.4rem;
+}
+
+.input-block label {
+    font-size: 1.4rem;
+}
+
+.input-block input {
+    width: 100%;
+    height: 5.6rem;
+    margin-top: 0.8rem;
+    border-radius: 0.8rem;
+    background: #F8F8FC;
+    border: 1px solid #E6E6F0;
+    outline: 0;
+    padding: 0 1.6rem;
+    font: 1.6rem Archivo;
+}
+
+.input-block:focus-within::after {
+    width: calc(100% - 3.2rem);
+    height: 2px;
+    content: '';
+    background: #916BEA;
+    position: absolute;
+    left: 1.6rem;
+    right: 1.6rem;
+    bottom: 0;
+}
+
+#page-teacher-form {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+#page-teacher-form .page-header .header-content {
+    margin-bottom: 3.4rem;
+}
+
+#page-teacher-form main {
+    background: #FFFFFF;
+    width: 100%;
+    max-width: 74rem;
+    border-radius: 0.8rem;
+    margin: -3.2rem auto 3.2rem;
+    padding-top: 6.4rem;
+    overflow: hidden;
+}
+
+#page-teacher-form main fieldset {
+    border: 0;
+    padding: 0 2.4rem;
+}
+
+#page-teacher-form main fieldset+fieldset {
+    margin-top: 6.4rem;
+}
+
+#page-teacher-form main fieldset legend {
+    font: 700 2.4rem Archivo;
+    color: #32264D;
+    margin-bottom: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid #E6E6F0;
+}
+
+#page-teacher-form main fieldset button {
+    width: 100%;
+    height: 5.6rem;
+    background: #04D361;
+    color: #FFFFFF;
+    border: 0;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font: 700 1.6rem Archivo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    margin-top: 3.2rem;
+}
+
+.textarea-block {
+    position: relative;
+}
+
+.textarea-block+.textarea-block {
+    margin-top: 1.4rem;
+}
+
+.textarea-block label {
+    font-size: 1.4rem;
+}
+
+.textarea-block textarea {
+    width: 100%;
+    height: 10rem;
+    min-height: 5rem;
+    margin-top: 0.8rem;
+    border-radius: 0.8rem;
+    background: #F8F8FC;
+    border: 1px solid #E6E6F0;
+    outline: 0;
+    resize: vertical;
+    padding: 1.2rem 1.6rem;
+    font: 1.6rem Archivo;
+}
+
+.textarea-block:focus-within::after {
+    width: calc(100% - 3.2rem);
+    height: 2px;
+    content: '';
+    background: #916BEA;
+    position: absolute;
+    left: 1.6rem;
+    right: 1.6rem;
+    bottom: 7px;
+}
+
+.content {
+    display: flex;
+    margin: auto;
+}
+
+.rTable {
+    width: 100%;
+    text-align: center;
+}
+
+.rTable thead {
+    background: #916BEA;
+    font-weight: bold;
+    color: #fff;
+}
+
+.rTable tbody tr:nth-child(2n) {
+    background: #ccc;
+}
+
+.rTable th, .rTable td {
+    padding: 7px 0;
+}
+
+@media screen and (max-width: 480px) {
+    .content {
+        width: 94%;
+    }
+    .rTable thead {
+        display: none;
+    }
+    .rTable tbody td {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .content {
+        width: 100%;
+    }
+    .rTable tbody tr td:nth-child(1) {
+        width: 10%;
+    }
+    .rTable tbody tr td:nth-child(2) {
+        width: 10%;
+    }
+    .rTable tbody tr td:nth-child(3) {
+        width: 10%;
+    }
+    .rTable tbody tr td:nth-child(4) {
+        width: 10%;
+    }
+    .rTable tbody tr td:nth-child(5) {
+        width: 10%;
+    }
 }
